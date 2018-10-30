@@ -4,7 +4,7 @@ A task based on implementing a cycle docking scheme (Makers week 1)
 
 ### Collaborators
 
-Tom Pickering, Tomas Doherty
+Tom Pickering, Tomas Doherty, Matt Stacel
 
 ### Language
 
