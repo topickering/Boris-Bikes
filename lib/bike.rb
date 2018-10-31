@@ -1,7 +1,7 @@
 class Bike
 
   def working?
-    self
+    true
   end
 
 end
