@@ -19,13 +19,13 @@ attr_accessor :bikes, :capacity
   def release_bike
     fail 'Station is empty' if empty?
     fail 'No working bikes' if all_broken?
-    @bikes.delete_at(first_working_bike_location)
+    @bikes.delete(first_working_bike)
   end
 
   private
 
-  def first_working_bike_location
-    @bikes.index { |bike| bike.working }
+  def first_working_bike
+    @bikes.find { |bike| bike.working }
   end
 
   def full?
