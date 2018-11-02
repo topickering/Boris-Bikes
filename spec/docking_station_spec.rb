@@ -37,10 +37,4 @@ describe DockingStation do
     end
   end
 
-  describe '#dock' do
-    it 'takes two arguments - the bike id and its condition' do
-      expect(subject).to respond_to(:dock).with(2).arguments
-    end
-  end
-
 end

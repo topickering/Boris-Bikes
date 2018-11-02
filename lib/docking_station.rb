@@ -11,9 +11,8 @@ DEFAULT_CAPACITY = 20
 
 attr_reader :bikes, :capacity
 
-  def dock(bike, condition = (Bike::DEFAULT_CONDITION))
+  def dock(bike)
     fail 'Station is full' if full?
-    bike.report_condition(condition)
     @bikes << bike
   end
 

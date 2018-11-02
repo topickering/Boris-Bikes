@@ -10,10 +10,10 @@ describe Bike do
     end
   end
 
-  describe 'report_condition' do
-    it 'amends the condition of a bike' do
-      subject.report_condition('new')
-      expect(subject.condition).to eq 'new'
+  describe 'report_broken' do
+    it 'reports a bike to be broken' do
+      subject.report_broken
+      expect(subject.working).to eq false
     end
   end
 

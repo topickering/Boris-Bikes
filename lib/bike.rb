@@ -2,20 +2,18 @@ require_relative 'docking_station'
 
 class Bike
 
-DEFAULT_CONDITION = 'working'
+attr_reader :working
 
-attr_reader :condition
-
-  def initialize(condition = DEFAULT_CONDITION)
-    @condition = condition
+  def initialize
+    @working = true
   end
 
   def working?
-    @condition == 'working'
+    @working
   end
 
-  def report_condition(condition = DEFAULT_CONDITION)
-    @condition = condition.to_s
+  def report_broken
+    @working = false
   end
 
 end
