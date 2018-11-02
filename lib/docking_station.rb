@@ -9,7 +9,7 @@ DEFAULT_CAPACITY = 20
     @capacity = capacity
   end
 
-attr_reader :bikes, :capacity
+attr_accessor :bikes, :capacity
 
   def dock(bike)
     fail 'Station is full' if full?
@@ -18,13 +18,22 @@ attr_reader :bikes, :capacity
 
   def release_bike
     fail 'Station is empty' if empty?
-    @bikes.pop
+    fail 'No working bikes' if all_broken?
+    @bikes.delete_at(first_working_bike_location)
   end
 
   private
 
+  def first_working_bike_location
+    @bikes.index { |bike| bike.working }
+  end
+
   def full?
     @bikes.count >= @capacity
+  end
+
+  def all_broken?
+    @bikes.all? { |bike| bike.working == false }
   end
 
   def empty?
